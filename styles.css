@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    overflow: hidden;
+}
+
+.message {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    filter: none;
+    opacity: 1;
+    text-align: center;
+    overflow: hidden;
+    position: absolute; /* Ensure it is positioned relative to the body */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to exact center */
+}
+
+canvas {
+	cursor: crosshair;
+	display: block;
+    z-index: 2;
+}
+
+.container {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('background.jpeg');
+    background-size: cover;
+}
+
+#countdown {
+    display: flex;
+    gap: 20px;
+    z-index: 3;
+}
+
+.shadow {
+    position: absolute;
+    width: 200vw;
+    height: 200vh;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-image: radial-gradient(circle at center, transparent, #000 10%);
+    z-index: 1;
+}
+
+.time-box {
+    background: black;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.time-seconds, .time-hours, .time-minutes, .time-days {
+    color: rgb(230, 255, 230);
+    font-size: 6rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    display: block;
+    transition: all 1.5s ease;
+    opacity: 1;
+    position: relative;
+}
+
+.label {
+    font-family: Arial, sans-serif;
+    font-size: 1.2;
+    margin-top: 10px;
+    display: block;
+    opacity: 1; /* Labels should always be visible */
+    color: white;
+}
+
+.time-seconds {
+    opacity: 1; /* Ensure numbers are always visible */
+    animation: letteranim 1s infinite ease-in-out;
+}
+
+@keyframes letteranim {
+    0% {
+        filter: blur(0.6rem);
+    }
+    30% {
+        filter: blur(0rem);
+    }
+    70% {
+        filter: blur(0rem);
+    }
+    100% {
+        filter: blur(0.6rem);
+    }
+}
+
